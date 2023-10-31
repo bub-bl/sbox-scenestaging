@@ -86,7 +86,7 @@ public partial class Scene : GameObject
 	}
 
 	[Pure]
-	public IEnumerable<T> FindAllComponents<T>( bool includeDisabled = false ) where T : BaseComponent
+	public IEnumerable<T> FindAllComponents<T>( [NodeProperty] bool includeDisabled = false ) where T : BaseComponent
 	{
 		// array rent?
 		List<T> found = new List<T>();
