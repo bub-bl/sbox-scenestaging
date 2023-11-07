@@ -1,0 +1,21 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+    <div class="speedometer">
+        @Speed
+    </div>
+</root>
+
+@code {
+    [Property]
+    public CharacterController Controller { get; set; }
+
+    public float Speed => (int)(Controller.Velocity.WithZ( 0 ).Length);
+
+    protected override int BuildHash()
+    {
+        return (int)Speed;
+    }
+}
