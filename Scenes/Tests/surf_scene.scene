@@ -1,0 +1,293 @@
+{
+  "GameObjects": [
+    {
+      "Id": "a8c7ef4a-6ce0-42d1-822e-5a5dce23ef2e",
+      "Name": "SkyBox",
+      "Enabled": true,
+      "Position": "65.5183,-295.1015,169.4491",
+      "Rotation": "-0.1332146,0.2769478,0.4124931,0.8575563",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__enabled": true,
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "ed3d92ee-eb07-49dd-8b7c-31273e4065e2",
+      "Name": "Plane",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "24,24,24",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,1",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "553c7412-94ad-4a2f-a382-eed61b3d3a1e",
+      "Name": "Directional Light",
+      "Enabled": true,
+      "Position": "0.0000375366,50.91304,203.6523",
+      "Rotation": "0.5571689,0.2613318,-0.3347079,0.713609",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "DirectionalLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "9e36acc7-063c-42fa-9326-20b8342d49ee",
+      "Name": "Cube",
+      "Enabled": true,
+      "Position": "223.5325,-53.75266,20.8985",
+      "Rotation": "-0.0000000208616,0.000000000000004144762,-0.3499996,0.9367496",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "49127eab-b0e8-4e4d-b1cb-5b67a9f0ec25",
+      "Name": "Cube (1)",
+      "Enabled": true,
+      "Position": "186.3718,164.7326,20.89844",
+      "Rotation": "-0.0000000208616,0.000000000000004144762,-0.3499996,0.9367496",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "883c6c5a-f7de-4bcb-bc41-742fc178af27",
+      "Name": "Cube (2)",
+      "Enabled": true,
+      "Position": "234.611,-396.4315,20.89833",
+      "Rotation": "-0.0000000208616,0.000000000000004144762,-0.3499996,0.9367496",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "7ff21c24-8141-4bd1-8abb-364b057a143e",
+      "Name": "Cube (3)",
+      "Enabled": true,
+      "Position": "534.6277,263.5937,20.89829",
+      "Rotation": "-0.0000000208616,0.000000000000004144762,-0.3499996,0.9367496",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "8be881b4-f3b4-4d45-aab6-c0ba0c454fa7",
+      "Name": "Cube (4)",
+      "Enabled": true,
+      "Position": "-54.34593,-364.3741,20.89825",
+      "Rotation": "-0.0000000208616,0.000000000000004144762,-0.3499996,0.9367496",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "25f81ffb-f66a-4302-a0d8-1217703f4b0f",
+      "Name": "Cube (5)",
+      "Enabled": true,
+      "Position": "360.8743,54.27912,20.89836",
+      "Rotation": "-0.0000000208616,0.000000000000004144762,-0.3499996,0.9367496",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "8c981ef2-a6d1-48a0-ae17-b934ab01157e",
+      "Name": "Player",
+      "Enabled": true,
+      "Position": "0,0,170.1121",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "player",
+      "Components": [
+        {
+          "__type": "PlayerController",
+          "__enabled": true,
+          "Body": "f9927e74-3199-4bb3-b734-f251bbe2bc26",
+          "CameraDistance": 0,
+          "Eye": "12cbee4d-2a70-4257-af15-26b8ef35b2c2",
+          "FirstPerson": true,
+          "Gravity": "0,0,800"
+        },
+        {
+          "__type": "CharacterController",
+          "__enabled": true,
+          "Acceleration": 1500,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        }
+      ],
+      "Children": [
+        {
+          "Id": "12cbee4d-2a70-4257-af15-26b8ef35b2c2",
+          "Name": "Eye Position",
+          "Enabled": true,
+          "Position": "0,0,64",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": ""
+        },
+        {
+          "Id": "6a4d3653-dbf2-4828-97bd-39c9914539ae",
+          "Name": "Camera",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0.00000005511423,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "Color, Depth, Stencil",
+              "FieldOfView": 90,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "TargetEye": "None",
+              "ZFar": 10000,
+              "ZNear": 10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "__references": []
+}
