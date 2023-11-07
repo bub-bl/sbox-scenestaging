@@ -8,6 +8,7 @@ using System.Drawing;
 [EditorHandle( "materials/gizmo/charactercontroller.png" )]
 public class CharacterController : BaseComponent
 {
+
 	[Range( 0, 200 )]
 	[Property] public float Radius { get; set; } = 16.0f;
 
@@ -20,8 +21,17 @@ public class CharacterController : BaseComponent
 	[Range( 0, 90 )]
 	[Property] public float GroundAngle { get; set; } = 45.0f;
 
-	[Range( 0, 20 )]
-	[Property] public float Acceleration { get; set; } = 10.0f;
+	[Range( 0, 10 )]
+	[Property] public float GroundAcceleration { get; set; } = 4.0f;
+
+	[Range( 0, 1500 )]
+	[Property] public float AirAcceleration { get; set; } = 150f;
+
+	[Range( 0, 10 )]
+	[Property] public float Friction { get; set; } = 4.0f;
+
+	[Range( 0, 140 )]
+	[Property] public float StopSpeed { get; set; } = 70.0f;
 
 	[Property] public TagSet IgnoreLayers { get; set; } = new ();
 
@@ -59,7 +69,8 @@ public class CharacterController : BaseComponent
 			return;
 
 		// Determine amount of acceleration.
-		var accelspeed = Acceleration * Time.Delta * wishspeed;
+		var accel = IsOnGround ? GroundAcceleration : AirAcceleration;
+		var accelspeed = accel * Time.Delta * wishspeed;
 
 		// Cap at addspeed
 		if ( accelspeed > addspeed )
@@ -72,17 +83,17 @@ public class CharacterController : BaseComponent
 	/// Apply an amount of friction to the current velocity.
 	/// No need to scale by time delta - it will be done inside.
 	/// </summary>
-	public void ApplyFriction( float frictionAmount, float stopSpeed = 140.0f )
+	public void ApplyFriction()
 	{
 		var speed = Velocity.Length;
 		if ( speed < 0.01f ) return;
 
 		// Bleed off some speed, but if we have less than the bleed
 		//  threshold, bleed the threshold amount.
-		float control = (speed < stopSpeed) ? stopSpeed : speed;
+		float control = (speed < StopSpeed) ? StopSpeed : speed;
 
 		// Add the amount to the drop amount.
-		var drop = control * Time.Delta * frictionAmount;
+		var drop = control * Time.Delta * Friction;
 
 		// scale the velocity
 		float newspeed = speed - drop;

@@ -5,6 +5,8 @@ using System.Drawing;
 public class PlayerController : BaseComponent
 {
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
+	[Property] public int WalkSpeed { get; set; } = 270;
+	[Property] public int RunSpeed { get; set; } = 320;
 
 	[Range( 0, 400)]
 	[Property] public float CameraDistance { get; set; } = 200.0f;
@@ -96,13 +98,12 @@ public class PlayerController : BaseComponent
 		{
 			cc.Velocity = cc.Velocity.WithZ( 0 );
 			cc.Accelerate( WishVelocity );
-			cc.ApplyFriction( 4.0f );
+			cc.ApplyFriction();
 		}
 		else
 		{
 			cc.Velocity -= Gravity * Time.Delta * 0.5f;
-			cc.Accelerate( WishVelocity.ClampLength( 50 ) );
-			cc.ApplyFriction( 0.1f );
+			cc.Accelerate( WishVelocity.ClampLength( 30 ) );
 		}
 
 		cc.Move();
@@ -132,7 +133,7 @@ public class PlayerController : BaseComponent
 
 		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
-		if ( Input.Down( "Run" ) ) WishVelocity *= 320.0f;
-		else WishVelocity *= 150.0f;
+		if ( Input.Down( "Run" ) ) WishVelocity *= RunSpeed;
+		else WishVelocity *= WalkSpeed;
 	}
 }
