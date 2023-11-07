@@ -1,6 +1,34 @@
 {
   "GameObjects": [
     {
+      "Id": "4719aa3e-588b-45c2-98a7-976bb185b095",
+      "Name": "[SETUP]",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "SurfScene",
+          "__enabled": true
+        },
+        {
+          "__type": "ScreenPanel",
+          "__enabled": true,
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "SurfHud",
+          "__enabled": true,
+          "Controller": "8c981ef2-a6d1-48a0-ae17-b934ab01157e"
+        }
+      ]
+    },
+    {
       "Id": "a8c7ef4a-6ce0-42d1-822e-5a5dce23ef2e",
       "Name": "SkyBox",
       "Enabled": true,
@@ -30,7 +58,7 @@
           "__type": "ModelComponent",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/default.vmat",
+          "MaterialOverride": "materials/dev/dev_measuregeneric01b.vmat",
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -39,7 +67,7 @@
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": false,
-          "Scale": "50,50,1",
+          "Scale": "100,100,1",
           "Surface": null
         }
       ]
@@ -117,33 +145,6 @@
       ]
     },
     {
-      "Id": "883c6c5a-f7de-4bcb-bc41-742fc178af27",
-      "Name": "Cube (2)",
-      "Enabled": true,
-      "Position": "234.611,-396.4315,20.89833",
-      "Rotation": "-0.0000000208616,0.000000000000004144762,-0.3499996,0.9367496",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Surface": null
-        }
-      ]
-    },
-    {
       "Id": "7ff21c24-8141-4bd1-8abb-364b057a143e",
       "Name": "Cube (3)",
       "Enabled": true,
@@ -156,34 +157,7 @@
           "__type": "ModelComponent",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "8be881b4-f3b4-4d45-aab6-c0ba0c454fa7",
-      "Name": "Cube (4)",
-      "Enabled": true,
-      "Position": "-54.34593,-364.3741,20.89825",
-      "Rotation": "-0.0000000208616,0.000000000000004144762,-0.3499996,0.9367496",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev/red.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -210,7 +184,7 @@
           "__type": "ModelComponent",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/dev/color_purple.vmat",
           "Model": "models/dev/box.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
@@ -236,21 +210,25 @@
         {
           "__type": "PlayerController",
           "__enabled": true,
-          "Body": "f9927e74-3199-4bb3-b734-f251bbe2bc26",
           "CameraDistance": 0,
           "Eye": "12cbee4d-2a70-4257-af15-26b8ef35b2c2",
           "FirstPerson": true,
-          "Gravity": "0,0,800"
+          "Gravity": "0,0,800",
+          "RunSpeed": 320,
+          "WalkSpeed": 270
         },
         {
           "__type": "CharacterController",
           "__enabled": true,
-          "Acceleration": 1500,
+          "AirAcceleration": 150,
+          "Friction": 4,
+          "GroundAcceleration": 4,
           "GroundAngle": 45,
           "Height": 64,
           "IgnoreLayers": "",
           "Radius": 16,
-          "StepHeight": 18
+          "StepHeight": 18,
+          "StopSpeed": 70
         }
       ],
       "Children": [
@@ -268,7 +246,7 @@
           "Name": "Camera",
           "Enabled": true,
           "Position": "0,0,0",
-          "Rotation": "0.00000005511423,0,0,1",
+          "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
           "Components": [
@@ -285,6 +263,33 @@
               "ZNear": 10
             }
           ]
+        }
+      ]
+    },
+    {
+      "Id": "a68f9b55-2fa8-47a3-947e-214b2f773d79",
+      "Name": "Cube",
+      "Enabled": true,
+      "Position": "0,-1305.493,-30.58591",
+      "Rotation": "-0.4392066,0,0,0.8983862",
+      "Scale": "26.78942,26.78942,26.78942",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/dev/dev_measuregeneric01.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Surface": null
         }
       ]
     }
