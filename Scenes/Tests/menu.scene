@@ -17,6 +17,7 @@
           "FieldOfView": 85.5,
           "Orthographic": false,
           "OrthographicHeight": 1204,
+          "TargetEye": "None",
           "ZFar": 2136.4,
           "ZNear": 1
         },
@@ -60,8 +61,7 @@
           "Components": [
             {
               "__type": "SceneMenuPanel",
-              "__enabled": true,
-              "Name": "Mingebag"
+              "__enabled": true
             }
           ]
         }

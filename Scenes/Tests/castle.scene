@@ -1,0 +1,141 @@
+{
+  "GameObjects": [
+    {
+      "Id": "6d5292a0-b30c-4266-8029-2412ddc85cfd",
+      "Name": "Camera",
+      "Enabled": true,
+      "Position": "-123.5795,0,13.32213",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "__enabled": true,
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "Color, Depth, Stencil",
+          "FieldOfView": 60,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "TargetEye": "None",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "Id": "54b2ea54-65d5-40d2-8037-f8e3631ecb57",
+      "Name": "Environments",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Children": [
+        {
+          "Id": "30e51931-fb46-4de3-8efe-f13e9127f263",
+          "Name": "Plane",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/dev/plane.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "3fda1004-c942-4d0b-bb53-54c817a98798",
+          "Name": "Castle 1",
+          "Enabled": true,
+          "Position": "-40,40,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.2,0.2,0.2",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/dev/sphere.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "HealthSystem",
+              "__enabled": true,
+              "HealthMax": 1000
+            },
+            {
+              "__type": "EntitySpawner",
+              "__enabled": true,
+              "EntityModel": "prefabs/mob_entity.object",
+              "SpawnDirection": "0,-1,0",
+              "SpawnDist": 16
+            }
+          ]
+        },
+        {
+          "Id": "a63e48d6-4b11-4657-a3a8-51fd3c9684a8",
+          "Name": "Castle 2",
+          "Enabled": true,
+          "Position": "-40,-40,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.2,0.2,0.2",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/dev/sphere.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "HealthSystem",
+              "__enabled": true,
+              "HealthMax": 1000
+            },
+            {
+              "__type": "EntitySpawner",
+              "__enabled": true,
+              "EntityModel": "prefabs/mob_entity.object",
+              "SpawnDirection": "0,1,0",
+              "SpawnDist": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "63185c3c-99d0-4613-b8fd-c5e4ffb5ddac",
+      "Name": "Directional Light",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0.4351622,0.4351622,-0.5573454,0.5573453",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "DirectionalLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    }
+  ],
+  "__references": []
+}

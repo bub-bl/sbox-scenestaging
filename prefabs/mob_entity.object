@@ -1,0 +1,41 @@
+{
+  "RootObject": {
+    "Id": "a466f501-d2c1-40d1-9132-843e797debc7",
+    "Name": "mob_entity",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Components": [
+      {
+        "__type": "MobMovement",
+        "__enabled": true,
+        "Speed": 1
+      }
+    ],
+    "Children": [
+      {
+        "Id": "c7eab26c-81c9-466f-bd1e-3b62d4f3d634",
+        "Name": "Cube",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.1,0.1,0.1",
+        "Tags": "",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "MaterialOverride": null,
+            "Model": "models/dev/box.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}
