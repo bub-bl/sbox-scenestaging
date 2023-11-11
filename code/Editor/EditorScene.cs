@@ -8,7 +8,7 @@ public static class EditorScene
 	internal static Gizmo.Instance GizmoInstance { get; private set; } = new Gizmo.Instance();
 
 	public static SelectionSystem Selection => SceneEditorSession.Active?.Selection;
-
+	
 	public static string LastOpenedScene
 	{
 		get => ProjectCookie.Get<string>( "scene.lastopened", null );
@@ -104,6 +104,8 @@ public static class EditorScene
 		Camera.Main.Worlds.Add( GameManager.ActiveScene.DebugSceneWorld );
 
 		EditorWindow.DockManager.RaiseDock( "GameFrame" );
+		
+		EditorEvent.Run("scene.play");
 	}
 
 	public static void Stop()
@@ -126,6 +128,8 @@ public static class EditorScene
 
 		EditorWindow.DockManager.RaiseDock( "Scene" );
 		SceneEditorTick();
+		
+		EditorEvent.Run("scene.stop");
 	}
 
 	/// <summary>

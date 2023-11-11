@@ -10,7 +10,6 @@ public sealed class EntitySpawner : BaseComponent
     {
         var currentPos = Transform.Position;
         
-        SceneUtility.
         var obj = SceneUtility.Instantiate( EntityModel, currentPos + SpawnDirection * SpawnDist, Rotation.Identity );
         // GameObject.Children.Add(obj);
         obj.SetParent(GameObject);

@@ -1165,6 +1165,7 @@
               "FieldOfView": 69.32,
               "Orthographic": false,
               "OrthographicHeight": 1204,
+              "TargetEye": "None",
               "ZFar": 10000,
               "ZNear": 1
             },
@@ -1440,6 +1441,143 @@
           "IsTrigger": false,
           "Scale": "50,50,50",
           "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "ab2b385b-b0ec-4536-be13-1c2a0bd73e8c",
+      "Name": "Cube",
+      "Enabled": true,
+      "Position": "1308.008,593.5424,-1596.456",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SpinComponent",
+          "__enabled": true,
+          "SpinAngles": "0,45,45"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "67d77115-68e1-4950-b2ab-7bd25d90d37e",
+      "Name": "Object",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__enabled": true,
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        }
+      ],
+      "Children": [
+        {
+          "Id": "7c432e05-939e-46f3-968c-df97743481ff",
+          "Name": "Object",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "TestMenuPanel",
+              "__enabled": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "e4caaa08-53fc-49cd-bbf1-84fc096acfe3",
+      "Name": "My Component",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "MyComponent",
+          "__enabled": true,
+          "Component": "feb2fe77-72b2-4afc-a553-127ae750361c"
+        }
+      ]
+    },
+    {
+      "Id": "feb2fe77-72b2-4afc-a553-127ae750361c",
+      "Name": "Apple Component",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "AppleComponent",
+          "__enabled": true,
+          "Age": 0,
+          "Name": null
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "c9a05c89-3307-404d-b53c-678af9e23642",
+      "Name": "UI",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Children": [
+        {
+          "Id": "f9e244d9-ef27-422f-95cb-06af8a2ee1d4",
+          "Name": "Generator",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "SandwindComponent",
+              "__enabled": true,
+              "AutoCompile": true,
+              "OutputPath": "/code/app.css",
+              "Prefix": "sw"
+            }
+          ]
         }
       ]
     }
