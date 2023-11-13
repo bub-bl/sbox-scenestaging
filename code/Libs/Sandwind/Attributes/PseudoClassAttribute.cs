@@ -3,11 +3,11 @@
 namespace Sandbox.Libs.Sandwind.Attributes;
 
 [AttributeUsage(AttributeTargets.Class)]
-public class PseudoClassesAttribute : Attribute
+public class PseudoClassAttribute : Attribute
 {
     public PseudoClass PseudoClass { get; }
 
-    public PseudoClassesAttribute(PseudoClass pseudoClass)
+    public PseudoClassAttribute(PseudoClass pseudoClass)
     {
         PseudoClass = pseudoClass;
     }

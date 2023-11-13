@@ -2,11 +2,17 @@
 
 public class SandwindComponent : BaseComponent, BaseComponent.ExecuteInEditor
 {
-    [Property] public string Prefix { get; set; } = "sw";
-    [Property] public string OutputPath { get; set; } = "/code/app.css";
-    [Property] public bool AutoCompile { get; set; } = true;
-
+    [Property] public SandwindConfigFile Configuration { get; set; }
+    
     public override void OnStart()
+    {
+        
+    }
+}
+
+internal static class SandwindGenerator
+{
+    public static void GenerateCss()
     {
         
     }

@@ -8,7 +8,7 @@ using Sandbox.UI;
 
 namespace Sandbox.Libs.Sandwind;
 
-[PseudoClasses(PseudoClass.Focus | PseudoClass.Hover)]
+[PseudoClass(PseudoClass.Focus | PseudoClass.Hover)]
 public class WidthCssClass : ClassGeneratorBase
 {
     public override string ClassName => "w";
@@ -38,12 +38,6 @@ public class WidthCssClass : ClassGeneratorBase
 public class ClassContext
 {
     public string ClassName { get; set; }
-}
-
-public sealed class ClassGenerator
-{
-    public required string ClassName { get; set; }
-    public required Func<ClassContext, CssClassBuilder> Generator { get; set; }
 }
 
 // public static class Sandwind

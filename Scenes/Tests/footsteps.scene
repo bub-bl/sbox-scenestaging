@@ -1573,9 +1573,7 @@
             {
               "__type": "SandwindComponent",
               "__enabled": true,
-              "AutoCompile": true,
-              "OutputPath": "/code/app.css",
-              "Prefix": "sw"
+              "Configuration": "configs/s\u0026wind_config.swc"
             }
           ]
         }

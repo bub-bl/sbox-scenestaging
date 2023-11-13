@@ -98,7 +98,7 @@ public static class EditorScene
 			gameSession.CameraPosition = activeSession.CameraPosition;
 			gameSession.CameraRotation = activeSession.CameraRotation;
 		}
-
+		
 		Camera.Main.World = GameManager.ActiveScene.SceneWorld;
 		Camera.Main.Worlds.Clear();
 		Camera.Main.Worlds.Add( GameManager.ActiveScene.DebugSceneWorld );

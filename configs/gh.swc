@@ -1,0 +1,7 @@
+{
+  "ClassPrefix": "sw",
+  "CssOutputPath": "code/css/app.css",
+  "AutoCompile": true,
+  "Tests": [],
+  "__references": []
+}
