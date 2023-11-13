@@ -67,7 +67,6 @@ public struct Properties
         public GeneratorType GeneratorType { get; set; }
         public CssUnits UnitsType { get; set; }
         public string Expression { get; set; }
-        public Expression Test { get; set; }
     }
 
     public List<Property> List { get; set; }
@@ -130,7 +129,7 @@ public sealed class IntValueGeneratorResource : ClassGenerator
         for (var i = 0; i < StepCount; i++)
         {
             var width = i * StepValue;
-
+            
             var classBuilder = new CssClassBuilder()
                 .WithClassName($"{classFile.ClassName}-{width}[px]")
                 .WithProperty(StyleProperties.Width, $"{width}px");
@@ -140,27 +139,27 @@ public sealed class IntValueGeneratorResource : ClassGenerator
     }
 }
 
-// public static class ExpressionCompiler
-// {
-//     public static int CompileMultiplyExpression(int a, int b)
-//     {
-//         // Définir les paramètres de l'expression
-//         var i = Expression.Parameter(typeof(int), "i");
-//         var stepValue = Expression.Parameter(typeof(int), "StepValue");
-//
-//         // Créer l'expression i * StepValue
-//         var multiplyExpression = Expression.Multiply(i, stepValue);
-//
-//         // Créer une lambda expression avec le corps de la fonction
-//         var lambdaExpression = Expression.Lambda<Func<int, int, int>>(multiplyExpression, i, stepValue);
-//
-//         // Compiler l'expression lambda en une fonction
-//         var multiplyFunction = lambdaExpression.Compile();
-//
-//         // Tester la fonction compilée
-//         var result = multiplyFunction(a, b);
-//
-//         // Console.WriteLine(result); // Affiche 50
-//         return result;
-//     }
-// }
+public static class ExpressionCompiler
+{
+    public static int CompileMultiplyExpression(int a, int b)
+    {
+        // Définir les paramètres de l'expression
+        var i = Expression.Parameter(typeof(int), "i");
+        var stepValue = Expression.Parameter(typeof(int), "StepValue");
+
+        // Créer l'expression i * StepValue
+        var multiplyExpression = Expression.Multiply(i, stepValue);
+
+        // Créer une lambda expression avec le corps de la fonction
+        var lambdaExpression = Expression.Lambda<Func<int, int, int>>(multiplyExpression, i, stepValue);
+
+        // Compiler l'expression lambda en une fonction
+        var multiplyFunction = lambdaExpression.Compile();
+
+        // Tester la fonction compilée
+        var result = multiplyFunction(a, b);
+
+        // Console.WriteLine(result); // Affiche 50
+        return result;
+    }
+}
