@@ -1,8 +1,8 @@
 ﻿namespace Sandbox.Libs.Sandwind.Css;
 
-public readonly struct CssProperty
+public struct CssProperty
 {
-    public string Name { get; }
+    public string Name { get; set; }
     
     public CssProperty(string name)
     {

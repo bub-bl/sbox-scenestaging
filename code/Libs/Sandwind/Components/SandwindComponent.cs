@@ -1,6 +1,6 @@
 ﻿namespace Sandbox.Libs.Sandwind.Components;
 
-public class SandwindComponent : BaseComponent, BaseComponent.ExecuteInEditor
+public class SandwindComponent : BaseComponent
 {
     [Property] public SandwindConfigFile Configuration { get; set; }
     
@@ -10,7 +10,7 @@ public class SandwindComponent : BaseComponent, BaseComponent.ExecuteInEditor
     }
 }
 
-internal static class SandwindGenerator
+public static class SandwindGenerator
 {
     public static void GenerateCss()
     {

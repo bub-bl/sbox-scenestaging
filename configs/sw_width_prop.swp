@@ -1,7 +1,0 @@
-{
-  "Name": "Width",
-  "Value": "",
-  "Value2": "configs/generators/sw_width_gen.swgen",
-  "UnitsType": "Pixel",
-  "__references": []
-}
