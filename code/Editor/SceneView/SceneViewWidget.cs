@@ -214,7 +214,9 @@ public partial class SceneViewWidget : Widget
 			var pos = tr.EndPosition + tr.HitNormal * DragOffset;
 
 			DragObject.Transform.Position = pos;
-			DragObject.Transform.Rotation = rot;
+			
+			if (EditorPreferences.RotateGameObjectOnHitPosition)
+				DragObject.Transform.Rotation = rot;
 			return;
 		}
 

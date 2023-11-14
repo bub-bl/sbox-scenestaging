@@ -1,0 +1,19 @@
+{
+  "ClassName": "w",
+  "PseudoClass": "Hover, Active",
+  "Generator": {
+    "StepCount": 10,
+    "StepValue": 8
+  },
+  "Properties": {
+    "List": [
+      {
+        "Value": "16",
+        "GeneratorSettings": {
+          "Expression": ""
+        }
+      }
+    ]
+  },
+  "__references": []
+}

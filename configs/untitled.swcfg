@@ -1,0 +1,35 @@
+{
+  "ClassPrefix": "sw",
+  "OutputPath": "data\\css\\app.scss",
+  "AutoCompile": true,
+  "Theme": {
+    "FontSize": [
+      {
+        "Key": "xs",
+        "Value": "0.7rem"
+      },
+      {
+        "Key": "sm",
+        "Value": "0.9rem"
+      },
+      {
+        "Key": "md",
+        "Value": "1rem"
+      },
+      {
+        "Key": "lg",
+        "Value": "1.1rem"
+      }
+    ],
+    "Extend": {
+      "Color": [
+        {
+          "Key": "",
+          "Value": ""
+        }
+      ]
+    }
+  },
+  "Classes": [],
+  "__references": []
+}

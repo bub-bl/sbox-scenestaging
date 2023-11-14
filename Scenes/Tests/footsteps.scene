@@ -1502,13 +1502,7 @@
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
-          "Tags": "",
-          "Components": [
-            {
-              "__type": "TestMenuPanel",
-              "__enabled": true
-            }
-          ]
+          "Tags": ""
         }
       ]
     },
@@ -1573,11 +1567,60 @@
             {
               "__type": "SandwindComponent",
               "__enabled": true,
-              "Configuration": "configs/s\u0026wind_config.swc"
+              "Configuration": "configs/untitled.swcfg"
             }
           ]
         }
       ]
+    },
+    {
+      "Id": "64669b7b-5647-4585-85cf-f75af4441723",
+      "Name": "characters",
+      "Enabled": true,
+      "Position": "1290.46,586.7628,-1571.445",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/characters.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "e3715a91-9d2f-4364-9026-19464fc655e1",
+      "Name": "characters",
+      "Enabled": true,
+      "Position": "1384.81,488.6152,-1637.738",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/characters.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "cbf222b3-eb9e-4fa8-9961-8f1a52f4d67c",
+      "Name": "Player",
+      "Enabled": false,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": ""
     }
   ],
   "__references": []
