@@ -1,13 +1,17 @@
 ﻿using System.Collections.Generic;
 using Sandbox.Libs.Sandwind.Css;
+using Sandbox.Libs.Sandwind.Css.Helpers;
 using Sandbox.Libs.Sandwind.Css.Properties;
 using Sandbox.UI;
 
 namespace Sandbox.Libs.Sandwind.Generators;
 
-public abstract class BorderRadiusGeneratorBase : SizePixelDimensionGenerator
+public abstract class BorderRadiusGeneratorBase : SandwindGeneratorBase
 {
     protected override PseudoClass PseudoClass => PseudoClass.Hover;
+    
+    public override IEnumerable<CssClassBuilder> Build(SandwindConfigFile configFile) =>
+        new List<CssClassBuilder>(GenerateValues(configFile, Sizes));
 }
 
 public sealed class BorderRadiusGenerator : BorderRadiusGeneratorBase
@@ -20,7 +24,7 @@ public sealed class BorderRadiusGenerator : BorderRadiusGeneratorBase
 
         return new List<(CssProperty, object)>
         {
-            (StyleProperties.BorderRadius, value),
+            (StyleProperties.BorderRadius, $"{value}px"),
         };
     };
 }
@@ -35,7 +39,7 @@ public sealed class BorderTopLeftGenerator : BorderRadiusGeneratorBase
 
         return new List<(CssProperty, object)>
         {
-            (StyleProperties.BorderTopLeft, value),
+            (StyleProperties.BorderTopLeft, $"{value}px"),
         };
     };
 }
@@ -50,7 +54,7 @@ public sealed class BorderBottomLeftGenerator : BorderRadiusGeneratorBase
 
         return new List<(CssProperty, object)>
         {
-            (StyleProperties.BorderBottomLeft, value),
+            (StyleProperties.BorderBottomLeft, $"{value}px"),
         };
     };
 }
@@ -65,7 +69,7 @@ public sealed class BorderTopRightGenerator : BorderRadiusGeneratorBase
 
         return new List<(CssProperty, object)>
         {
-            (StyleProperties.BorderTopRight, value),
+            (StyleProperties.BorderTopRight, $"{value}px"),
         };
     };
 }
@@ -80,7 +84,7 @@ public sealed class BorderBottomRightGenerator : BorderRadiusGeneratorBase
 
         return new List<(CssProperty, object)>
         {
-            (StyleProperties.BorderBottomRight, value),
+            (StyleProperties.BorderBottomRight, $"{value}px"),
         };
     };
 }
@@ -95,8 +99,8 @@ public sealed class BorderTopGenerator : BorderRadiusGeneratorBase
 
         return new List<(CssProperty, object)>
         {
-            (StyleProperties.BorderTopLeft, value),
-            (StyleProperties.BorderTopRight, value),
+            (StyleProperties.BorderTopLeft, $"{value}px"),
+            (StyleProperties.BorderTopRight, $"{value}px"),
         };
     };
 }
@@ -111,8 +115,8 @@ public sealed class BorderBottomGenerator : BorderRadiusGeneratorBase
 
         return new List<(CssProperty, object)>
         {
-            (StyleProperties.BorderBottomLeft, value),
-            (StyleProperties.BorderBottomRight, value),
+            (StyleProperties.BorderBottomLeft, $"{value}px"),
+            (StyleProperties.BorderBottomRight, $"{value}px"),
         };
     };
 }
@@ -127,8 +131,8 @@ public sealed class BorderLeftGenerator : BorderRadiusGeneratorBase
 
         return new List<(CssProperty, object)>
         {
-            (StyleProperties.BorderTopLeft, value),
-            (StyleProperties.BorderBottomLeft, value),
+            (StyleProperties.BorderTopLeft, $"{value}px"),
+            (StyleProperties.BorderBottomLeft, $"{value}px"),
         };
     };
 }
@@ -143,8 +147,8 @@ public sealed class BorderRightGenerator : BorderRadiusGeneratorBase
 
         return new List<(CssProperty, object)>
         {
-            (StyleProperties.BorderTopRight, value),
-            (StyleProperties.BorderBottomRight, value),
+            (StyleProperties.BorderTopRight, $"{value}px"),
+            (StyleProperties.BorderBottomRight, $"{value}px"),
         };
     };
 }

@@ -12,7 +12,8 @@
 
     protected override void OnPreRender()
     {
+        if (!global::GameManager.IsPlaying) return;
         Panel.StyleSheet.Load("/styles/sandwind.scss");
     }
-    
+
 }

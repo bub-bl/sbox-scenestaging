@@ -12,7 +12,7 @@ public abstract class SandwindGeneratorBase
 
     protected abstract Func<object[], List<(CssProperty, object)>> Properties { get; }
 
-    private readonly Dictionary<string, float> Sizes = new()
+    protected static readonly Dictionary<string, object> Sizes = new()
     {
         { "none", 0 },
         { "sm", 2 },
@@ -24,22 +24,46 @@ public abstract class SandwindGeneratorBase
         { "3xl", 24 },
         { "full", 9999 },
     };
-
-    protected IEnumerable<CssClassBuilder> GenerateSizes(SandwindConfigFile configFile)
+    
+    protected static readonly Dictionary<string, object> Justify = new()
     {
-        foreach (var size in Sizes)
+        { "center", "center" },
+        { "end", "flex-end" },
+        { "start", "flex-start" },
+        { "between", "space-between" },
+        { "around", "space-around" },
+        { "evenly", "space-evenly" },
+    };
+    
+    protected static readonly Dictionary<string, object> Align = new()
+    {
+        { "auto", "auto" },
+        { "center", "center" },
+        { "stretch", "stretch" },
+        { "baseline", "baseline" },
+        { "end", "flex-end" },
+        { "start", "flex-start" },
+        { "between", "space-between" },
+        { "around", "space-around" },
+    };
+
+    protected IEnumerable<CssClassBuilder> GenerateValues(SandwindConfigFile configFile, Dictionary<string, object> values)
+    {
+        foreach (var value in values)
         {
-            var dash = !string.IsNullOrEmpty(size.Key) ? "-" : "";
-            var className = $"{ClassName}{dash}{size.Key}";
+            var dash = !string.IsNullOrEmpty(value.Key) ? "-" : "";
+            var className = $"{ClassName}{dash}{value.Key}";
             
             var classBuilder = new CssClassBuilder()
                 .WithClassName(className)
                 .WithPseudoClass(PseudoClass);
             
-            var props = Properties.Invoke(new object[] { size.Key, size.Value });
-            
+            var props = Properties.Invoke(new[] { value.Key, value.Value });
+
             foreach (var prop in props)
-                classBuilder.WithProperty(prop.Item1, $"{prop.Item2}px");
+            {
+                classBuilder.WithProperty(prop.Item1, prop.Item2.ToString());
+            }
             
             yield return classBuilder;
         }

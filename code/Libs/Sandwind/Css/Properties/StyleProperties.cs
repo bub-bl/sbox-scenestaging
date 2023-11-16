@@ -33,4 +33,8 @@ public static class StyleProperties
     public static CssProperty Bottom => new("bottom");
     public static CssProperty Left => new("left");
     public static CssProperty Right => new("right");
+    public static CssProperty JustifyContent => new("justify-content");
+    public static CssProperty AlignContent => new("align-content");
+    public static CssProperty AlignItems => new("align-items");
+    public static CssProperty AlignSelf => new("align-self");
 }
