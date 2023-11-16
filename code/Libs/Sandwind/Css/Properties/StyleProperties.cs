@@ -29,4 +29,8 @@ public static class StyleProperties
     public static CssProperty BorderBottomLeft => new("border-bottom-left-radius");
     public static CssProperty BorderTopRight => new("border-top-right-radius");
     public static CssProperty BorderBottomRight => new("border-bottom-right-radius");
+    public static CssProperty Top => new("top");
+    public static CssProperty Bottom => new("bottom");
+    public static CssProperty Left => new("left");
+    public static CssProperty Right => new("right");
 }

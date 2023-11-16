@@ -88,35 +88,6 @@ public abstract class SandwindGeneratorBase
         });
     }
 
-    // protected IEnumerable<CssClassBuilder> GenerateHslColor(SandwindConfigFile configFile)
-    // {
-    //     const int hueInterval = 10;
-    //     const float saturate = 100f;
-    //     const int lightnessStep = 10;
-    //
-    //     for (var hue = 0; hue < 360; hue += hueInterval)
-    //     {
-    //         var colorName = HueColors.FirstOrDefault(x => hue >= x.Value.hueStart && hue <= x.Value.hueEnd).Key;
-    //
-    //         for (var lightness = 90; lightness > 10; lightness -= lightnessStep)
-    //         {
-    //             var value = lightness * 10f;
-    //             var className = $"{ClassName}-{colorName}-{value}";
-    //
-    //             var classBuilder = new CssClassBuilder()
-    //                 .WithClassName(className)
-    //                 .WithPseudoClass(PseudoClass);
-    //
-    //             var props = Properties.Invoke(new object[] { hue, saturate, value });
-    //
-    //             foreach (var prop in props)
-    //                 classBuilder.WithProperty(prop.Item1, $"hsl({prop.Item2}, {saturate}, {value})");
-    //
-    //             yield return classBuilder;
-    //         }
-    //     }
-    // }
-
     protected IEnumerable<CssClassBuilder> GenerateHslColor(SandwindConfigFile configFile, string colorName, float hue,
         float saturate = 50f)
     {
