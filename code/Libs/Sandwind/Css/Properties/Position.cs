@@ -1,6 +1,4 @@
-﻿using Sandbox.Libs.Sandwind.CssHelpers.Helpers;
-
-namespace Sandbox.Libs.Sandwind.Css.Properties;
+﻿namespace Sandbox.Libs.Sandwind.Css.Properties;
 
 public readonly record struct Position : ICssProperty
 {

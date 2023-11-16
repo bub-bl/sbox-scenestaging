@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,39 +14,49 @@ public static class Sandwind
     [Event("scene.play")]
     public static async Task OnPlay()
     {
+        var watch = new Stopwatch();
+        watch.Start();
+        
         var exists = TryGetSandwindComponent(out var component);
 
         if (!exists)
         {
             Log.Error($"Unable to get {nameof(SandwindComponent).ToTitleCase()} component.");
-            // return;
+            return;
         }
 
+        if (!component.Configuration.AutoCompile)
+            return;
+        
         var config = component.Configuration;
         var outputPath = Path.Combine(LocalProject.CurrentGame.GetRootPath(), config.OutputPath);
         var outputDir = Path.GetDirectoryName(outputPath);
 
-        var types = EditorTypeLibrary.GetTypes<ScssClassGeneratorBase>()
+        var types = EditorTypeLibrary.GetTypes<SandwindGeneratorBase>()
             .Where(x => x is { IsAbstract: false, IsInterface: false })
             .ToList();
 
         var cssFileBuilder = new StringBuilder();
 
-        Log.Warning($"Generate classes for {types.Count} types..");
+        Log.Info($"Generate classes for {types.Count} types..");
 
         foreach (var type in types)
         {
-            var obj = EditorTypeLibrary.Create<ScssClassGeneratorBase>(type.TargetType, Array.Empty<object>());
+            var obj = EditorTypeLibrary.Create<SandwindGeneratorBase>(type.TargetType, Array.Empty<object>());
             var classes = GenerateClasses(config, obj);
             
             cssFileBuilder.Append(classes);
         }
 
+        watch.Stop();
+        
         Directory.CreateDirectory(outputDir);
         await File.WriteAllTextAsync(outputPath, cssFileBuilder.ToString());
+        
+        Log.Info(string.Join(", ", outputPath, $"Compiled in {watch.ElapsedMilliseconds}ms."));
     }
 
-    private static StringBuilder GenerateClasses(SandwindConfigFile configFile, ScssClassGeneratorBase classGenerator)
+    private static StringBuilder GenerateClasses(SandwindConfigFile configFile, SandwindGeneratorBase classGenerator)
     {
         var cssClasses = classGenerator.Build(configFile);
         var cssBuilder = new StringBuilder();

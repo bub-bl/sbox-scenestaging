@@ -1,7 +1,6 @@
 using Sandbox.Libs.Sandwind;
 using Sandbox.Libs.Sandwind.Css.Helpers;
 using Sandbox.Libs.Sandwind.Css.Properties;
-using Sandbox.Libs.Sandwind.CssHelpers.Helpers;
 
 namespace GameObjects;
 

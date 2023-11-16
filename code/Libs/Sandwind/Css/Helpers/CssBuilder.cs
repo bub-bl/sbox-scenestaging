@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Sandbox.Libs.Sandwind.CssHelpers.Helpers;
+namespace Sandbox.Libs.Sandwind.Css.Helpers;
 
 public sealed class CssBuilder
 {

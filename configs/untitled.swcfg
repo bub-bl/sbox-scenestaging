@@ -1,6 +1,6 @@
 {
-  "ClassPrefix": "sw",
-  "OutputPath": "data\\css\\app.scss",
+  "ClassPrefix": "",
+  "OutputPath": "code\\styles\\sandwind.scss",
   "AutoCompile": true,
   "Theme": {
     "FontSize": [

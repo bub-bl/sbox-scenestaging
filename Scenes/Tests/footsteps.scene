@@ -1368,7 +1368,91 @@
       "Id": "209eb1af-61f5-45f1-b334-ab730d61d05a",
       "Name": "Sphere",
       "Enabled": true,
+      "Position": "1215.598,405.3771,-1656.393",
+      "Rotation": "0,0,0,1",
+      "Scale": "2,2,2",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "0.85644,0.12719,0.57932,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "72da46e0-dfde-4d1c-a9f8-cbfb61529608",
+      "Name": "Sphere (1)",
+      "Enabled": true,
       "Position": "1215.598,155.5344,-1656.393",
+      "Rotation": "0,0,0,1",
+      "Scale": "2,2,2",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "0.85644,0.12719,0.57932,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "0e901b63-9de0-4084-9759-b0434c360a56",
+      "Name": "Sphere (2)",
+      "Enabled": true,
+      "Position": "1215.598,155.5344,-1505.678",
+      "Rotation": "0,0,0,1",
+      "Scale": "2,2,2",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "0.85644,0.12719,0.57932,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "4b3ccb1a-58c7-4977-8423-5e7aba4e61d3",
+      "Name": "Sphere (3)",
+      "Enabled": true,
+      "Position": "1215.598,1.14502,-1506.582",
       "Rotation": "0,0,0,1",
       "Scale": "2,2,2",
       "Tags": "",
@@ -1476,6 +1560,7 @@
           "__enabled": true,
           "IsTrigger": false,
           "Scale": "50,50,50",
+          "Static": false,
           "Surface": null
         }
       ]
@@ -1513,22 +1598,24 @@
     {
       "Id": "e4caaa08-53fc-49cd-bbf1-84fc096acfe3",
       "Name": "My Component",
-      "Enabled": true,
+      "Enabled": false,
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "MyComponent",
-          "__enabled": true,
-          "Component": "feb2fe77-72b2-4afc-a553-127ae750361c"
-        }
-      ]
+      "Tags": ""
     },
     {
       "Id": "feb2fe77-72b2-4afc-a553-127ae750361c",
       "Name": "Apple Component",
+      "Enabled": false,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": ""
+    },
+    {
+      "Id": "f9e244d9-ef27-422f-95cb-06af8a2ee1d4",
+      "Name": "Sandwind",
       "Enabled": true,
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
@@ -1536,17 +1623,9 @@
       "Tags": "",
       "Components": [
         {
-          "__type": "AppleComponent",
+          "__type": "SandwindComponent",
           "__enabled": true,
-          "Age": 0,
-          "Name": null
-        },
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Surface": null
+          "Configuration": "configs/untitled.swcfg"
         }
       ]
     },
@@ -1558,10 +1637,20 @@
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__enabled": true,
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        }
+      ],
       "Children": [
         {
-          "Id": "f9e244d9-ef27-422f-95cb-06af8a2ee1d4",
-          "Name": "Generator",
+          "Id": "03f555f9-95cb-4e2a-8b26-ffd4bf9c9887",
+          "Name": "Inventory",
           "Enabled": true,
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
@@ -1569,19 +1658,18 @@
           "Tags": "",
           "Components": [
             {
-              "__type": "SandwindComponent",
-              "__enabled": true,
-              "Configuration": "configs/untitled.swcfg"
+              "__type": "Inventory",
+              "__enabled": true
             }
           ]
         }
       ]
     },
     {
-      "Id": "64669b7b-5647-4585-85cf-f75af4441723",
-      "Name": "characters",
+      "Id": "c54d0a2f-27fd-41ea-8c12-4899f22a9eb0",
+      "Name": "sm_generic_tree_04",
       "Enabled": true,
-      "Position": "1290.46,586.7628,-1571.445",
+      "Position": "1210.091,406.6853,-1603.047",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -1591,40 +1679,11 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": null,
-          "Model": "models/characters.vmdl",
+          "Model": "models/sm_generic_tree_04.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         }
       ]
-    },
-    {
-      "Id": "e3715a91-9d2f-4364-9026-19464fc655e1",
-      "Name": "characters",
-      "Enabled": true,
-      "Position": "1384.81,488.6152,-1637.738",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/characters.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "Id": "cbf222b3-eb9e-4fa8-9961-8f1a52f4d67c",
-      "Name": "Player",
-      "Enabled": false,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": ""
     }
   ],
   "SceneProperties": {

@@ -1,0 +1,18 @@
+﻿@using Sandbox.UI
+
+@inherits PanelComponent
+
+<root>
+    <div class="rounded-b-full w-2/4 hover|w-3/4 bg-blue-500 hover|bg-emerald-500">
+        <h1 class="text-red-500">J'aime les mouches:</h1>
+    </div>
+</root>
+
+@code {
+
+    protected override void OnPreRender()
+    {
+        Panel.StyleSheet.Load("/styles/sandwind.scss");
+    }
+    
+}

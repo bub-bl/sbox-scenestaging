@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using Sandbox.Libs.Sandwind.Css;
-using Sandbox.Libs.Sandwind.Css.Helpers;
+using Sandbox.Extensions;
 using Sandbox.UI;
 
-namespace Sandbox.Libs.Sandwind.CssHelpers.Helpers;
+namespace Sandbox.Libs.Sandwind.Css.Helpers;
 
 public class CssClassBuilder
 {
     private string _className;
-    private PseudoClass? _pseudoClass;
+    private PseudoClass _pseudoClass;
     private List<(CssProperty Property, CssPropertyValue Value)> _properties = new();
 
     private StringBuilder _builder = new();
@@ -31,26 +30,51 @@ public class CssClassBuilder
         _properties.Add((property, value));
         return this;
     }
+    
+    private string BuildClassName(PseudoClass pseudoClass)
+    {
+        var isValid = pseudoClass is not PseudoClass.None;
+        var str = pseudoClass.ToString().ToLower();
+        var result = new StringBuilder();
+
+        result.Append('.');
+
+        if (isValid)
+        {
+            result.Append(str);
+            result.Append('|');
+        }
+
+        result.Append(_className);
+
+        if (isValid)
+        {
+            result.Append(':');
+            result.Append(str);
+        }
+
+        return result.ToString();
+    }
 
     public string Build()
     {
-        _builder.Append($".{_className}");
-        
-        if (_pseudoClass is not null)
-            _builder.Append(":" + _pseudoClass.ToString().ToLower());
-        
-        _builder.AppendLine(" {");
-
-        foreach (var prop in _properties)
+        foreach (var pseudoClass in _pseudoClass.GetFlags())
         {
-            var style = new StyleBuilder()
-                .AddStyle(prop.Property, prop.Value)
-                .Build();
+            _builder.Append(BuildClassName(pseudoClass));
+            _builder.AppendLine(" {");
 
-            _builder.AppendLine($"\t{style}");
+            foreach (var prop in _properties)
+            {
+                var style = new StyleBuilder()
+                    .AddStyle(prop.Property, prop.Value)
+                    .Build();
+
+                _builder.AppendLine($"\t{style}");
+            }
+
+            _builder.AppendLine("}");    
         }
-
-        _builder.AppendLine("}");
+        
         return _builder.ToString();
     }
 }

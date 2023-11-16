@@ -5,7 +5,6 @@ using System.Runtime.CompilerServices;
 using Sandbox.Extensions;
 using Sandbox.Libs.Sandwind.Attributes;
 using Sandbox.Libs.Sandwind.Css;
-using Sandbox.Libs.Sandwind.CssHelpers.Helpers;
 using Sandbox.UI;
 
 namespace Sandbox.Libs.Sandwind;
@@ -73,23 +72,5 @@ public class SandwindClassFile : GameResource
     {
         [Range(1, 100, 1)] public int StepCount { get; set; }
         [Range(1, 100, 1)] public int StepValue { get; set; }
-
-        // public CssUnits UnitsType { get; set; }
-        public ValueActionType ValueActionType { get; set; }
     }
-}
-
-public enum CssUnits
-{
-    Pixel,
-    Rem,
-    Em,
-    Rad,
-    Percentage
-}
-
-public enum ValueActionType
-{
-    Add,
-    Multiply
 }

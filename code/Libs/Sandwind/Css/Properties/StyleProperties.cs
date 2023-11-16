@@ -14,4 +14,19 @@ public static class StyleProperties
     public static CssProperty MaxHeight => new("max-height");
     public static CssProperty Width => new("width");
     public static CssProperty Height => new("height");
+    public static CssProperty Padding => new("padding");
+    public static CssProperty PaddingLeft => new("padding-left");
+    public static CssProperty PaddingRight => new("padding-right");
+    public static CssProperty PaddingTop => new("padding-top");
+    public static CssProperty PaddingBottom => new("padding-bottom");
+    public static CssProperty Margin => new("margin");
+    public static CssProperty MarginLeft => new("margin-left");
+    public static CssProperty MarginRight => new("margin-right");
+    public static CssProperty MarginTop => new("margin-top");
+    public static CssProperty MarginBottom => new("margin-bottom");
+    public static CssProperty BorderRadius => new("border-radius");
+    public static CssProperty BorderTopLeft => new("border-top-left-radius");
+    public static CssProperty BorderBottomLeft => new("border-bottom-left-radius");
+    public static CssProperty BorderTopRight => new("border-top-right-radius");
+    public static CssProperty BorderBottomRight => new("border-bottom-right-radius");
 }

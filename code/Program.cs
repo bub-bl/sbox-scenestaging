@@ -18,18 +18,3 @@ public static class Program
 		GameManager.IsPlaying = true;
 	}
 }
-
-public class TestComponentBase : BaseComponent
-{
-	[Property] public int Age { get; set; }
-}
-
-public class AppleComponent : TestComponentBase
-{
-	[Property] public string Name { get; set; }
-}
-
-public class MyComponent : BaseComponent
-{
-	[Property] public TestComponentBase Component { get; set; }
-}
