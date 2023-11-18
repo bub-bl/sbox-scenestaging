@@ -5,6 +5,9 @@ public static class StyleProperties
     public static CssProperty Background => new("background");
     public static CssProperty Foreground => new("foreground");
     public static CssProperty BackgroundColor => new("background-color");
+    public static CssProperty BackgroundRepeat => new("background-repeat");
+    public static CssProperty BackgroundPosition => new("background-position");
+    public static CssProperty BackgroundSize => new("background-size");
     public static CssProperty Color => new("color");
     public static CssProperty Position => new("position");
     public static CssProperty Display => new("display");
@@ -24,6 +27,16 @@ public static class StyleProperties
     public static CssProperty MarginRight => new("margin-right");
     public static CssProperty MarginTop => new("margin-top");
     public static CssProperty MarginBottom => new("margin-bottom");
+    public static CssProperty BorderColor => new("border-color");
+    public static CssProperty BorderTopColor => new("border-top-color");
+    public static CssProperty BorderBottomColor => new("border-bottom-color");
+    public static CssProperty BorderLeftColor => new("border-left-color");
+    public static CssProperty BorderRightColor => new("border-right-color");
+    public static CssProperty BorderWidth => new("border-width");
+    public static CssProperty BorderTopWidth => new("border-top-width");
+    public static CssProperty BorderBottomWidth => new("border-bottom-width");
+    public static CssProperty BorderLeftWidth => new("border-left-width");
+    public static CssProperty BorderRightWidth => new("border-right-width");
     public static CssProperty BorderRadius => new("border-radius");
     public static CssProperty BorderTopLeft => new("border-top-left-radius");
     public static CssProperty BorderBottomLeft => new("border-bottom-left-radius");

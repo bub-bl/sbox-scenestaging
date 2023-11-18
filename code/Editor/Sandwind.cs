@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Sandbox.Libs.Sandwind;
 using Sandbox.Libs.Sandwind.Components;
@@ -16,7 +17,7 @@ public static class Sandwind
     {
         var watch = new Stopwatch();
         watch.Start();
-        
+
         var exists = TryGetSandwindComponent(out var component);
 
         if (!exists)
@@ -27,7 +28,7 @@ public static class Sandwind
 
         if (!component.Configuration.AutoCompile)
             return;
-        
+
         var config = component.Configuration;
         var outputPath = Path.Combine(LocalProject.CurrentGame.GetRootPath(), config.OutputPath);
         var outputDir = Path.GetDirectoryName(outputPath);
@@ -44,16 +45,18 @@ public static class Sandwind
         {
             var obj = EditorTypeLibrary.Create<SandwindGeneratorBase>(type.TargetType, Array.Empty<object>());
             var classes = GenerateClasses(config, obj);
-            
+
             cssFileBuilder.Append(classes);
         }
 
         watch.Stop();
-        
-        Directory.CreateDirectory(outputDir);
+        Log.Info(string.Join(", ", outputPath, $"Compiled in {watch.ElapsedMilliseconds}ms."));
+        watch.Restart();
+
         await File.WriteAllTextAsync(outputPath, cssFileBuilder.ToString());
         
-        Log.Info(string.Join(", ", outputPath, $"Compiled in {watch.ElapsedMilliseconds}ms."));
+        watch.Stop();
+        Log.Info(string.Join(", ", outputPath, $"File writted in {watch.ElapsedMilliseconds}ms."));
     }
 
     private static StringBuilder GenerateClasses(SandwindConfigFile configFile, SandwindGeneratorBase classGenerator)

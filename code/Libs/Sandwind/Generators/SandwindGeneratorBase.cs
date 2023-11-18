@@ -24,7 +24,7 @@ public abstract class SandwindGeneratorBase
         { "3xl", 24 },
         { "full", 9999 },
     };
-    
+
     protected static readonly Dictionary<string, object> Justify = new()
     {
         { "center", "center" },
@@ -34,7 +34,7 @@ public abstract class SandwindGeneratorBase
         { "around", "space-around" },
         { "evenly", "space-evenly" },
     };
-    
+
     protected static readonly Dictionary<string, object> Align = new()
     {
         { "auto", "auto" },
@@ -46,32 +46,58 @@ public abstract class SandwindGeneratorBase
         { "between", "space-between" },
         { "around", "space-around" },
     };
+    
+    protected static readonly Dictionary<string, object> BackgroundRepeat = new()
+    {
+        { "no-repeat", "no-repeat" },
+        { "repeat", "repeat" },
+        { "repeat-x", "repeat-x" },
+        { "repeat-y", "repeat-y" },
+    };
+    
+    protected static readonly Dictionary<string, object> BackgroundPosition = new()
+    {
+        { "center", "center" },
+        { "top", "top" },
+        { "bottom", "bottom" },
+        { "left", "left" },
+        { "left-top", "left top" },
+        { "left-bottom", "left bottom" },
+        { "right", "right" },
+        { "right-top", "right top" },
+        { "right-bottom", "right bottom" },
+    };
+    
+    // protected static readonly Dictionary<string, object> BackgroundSize = new()
+    // {
+    //     { "auto", "auto" },
+    //     { "cover", "cover" },
+    //     { "contain", "contain" },
+    // };
 
-    protected IEnumerable<CssClassBuilder> GenerateValues(SandwindConfigFile configFile, Dictionary<string, object> values)
+    protected IEnumerable<CssClassBuilder> GenerateValues(SandwindConfigFile configFile,
+        Dictionary<string, object> values)
     {
         foreach (var value in values)
         {
             var dash = !string.IsNullOrEmpty(value.Key) ? "-" : "";
             var className = $"{ClassName}{dash}{value.Key}";
-            
+
             var classBuilder = new CssClassBuilder()
                 .WithClassName(className)
                 .WithPseudoClass(PseudoClass);
-            
+
             var props = Properties.Invoke(new[] { value.Key, value.Value });
 
             foreach (var prop in props)
-            {
                 classBuilder.WithProperty(prop.Item1, prop.Item2.ToString());
-            }
-            
+
             yield return classBuilder;
         }
     }
 
     protected IEnumerable<CssClassBuilder> GenerateIncrementals(SandwindConfigFile configFile, int startIndex,
-        int steps,
-        float stepInterval, float valueInterval)
+        int steps, float stepInterval, float valueInterval)
     {
         return Enumerable.Range(startIndex + 1, steps).Select(i =>
         {
